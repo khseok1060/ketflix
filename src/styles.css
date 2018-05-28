@@ -1,10 +1,108 @@
-:root {
-    --danger-theme: {
-      color: white;
-      background-color: red;
-    }
-  }
-  
-  body {
-    @apply --danger-theme;
-  }
+body {
+  padding: 0;
+  margin: 0;
+  height: 300vh;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  transition: background-color 0.3s linear;
+  z-index: 3;
+  align-items: center;
+}
+
+header img {
+  height: 60px;
+}
+
+.header-menu-item {
+  color: white;
+}
+
+.black {
+  background-color: black;
+}
+
+.main-video-container {
+  position: relative;
+  margin-top: -120px;
+  height: 800px;
+  overflow: hidden;
+}
+
+.main-video-container .volume {
+  color: white;
+  z-index: 2;
+  position: absolute;
+  bottom: 150px;
+  right: 60px;
+  font-size: 25px;
+  border: 2px solid white;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header-nav-container {
+  flex-basis: 70%;
+}
+
+.header-nav-container-list {
+  display: flex;
+  color: white;
+  list-style-type: none;
+}
+
+.header-nav-container-item {
+  margin: 0 10px;
+}
+
+.header-menu-container {
+  display: flex;
+}
+
+.header-menu-item {
+  font-size: 20px;
+  position: relative;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+
+.header-menu-search {
+  display: flex;
+  border: 1px solid transparent;
+  padding: 3px 5px;
+  align-items: center;
+}
+
+.header-menu-search i {
+  cursor: pointer;
+}
+
+.search input {
+  transition: all .2s linear;
+  width: 0;
+  height: 27px;
+  transform-origin: 100% 100%;
+  font-size: 14px;
+  background-color: transparent;
+  caret-color: white;
+  border: 0;
+  color: white;
+}
+
+.active {
+  width: 250px;
+  margin-left: 10px;
+}
