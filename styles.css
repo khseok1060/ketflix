@@ -212,6 +212,7 @@ body {
   -webkit-box-pack: center;
           justify-content: center;
   cursor: pointer;
+  color: white;
 }
 
 #js-main-video {
