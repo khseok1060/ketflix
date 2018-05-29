@@ -1,23 +1,24 @@
+@import "reset.css";
+
 body {
-  padding: 0;
-  margin: 0;
   height: 300vh;
+  background-color: black;
 }
 
-header {
+.header {
   display: flex;
+  align-items: center;
+  padding: 5px 50px;
+  justify-content: space-between;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 60px;
   background-color: transparent;
   transition: background-color 0.3s linear;
-  z-index: 3;
-  align-items: center;
+  z-index: 10;
 }
 
-header img {
+.header img {
   height: 60px;
 }
 
@@ -29,58 +30,42 @@ header img {
   background-color: black;
 }
 
-.main-video-container {
-  position: relative;
-  margin-top: -120px;
-  height: 800px;
-  overflow: hidden;
-}
-
-.main-video-container .volume {
-  color: white;
-  z-index: 2;
-  position: absolute;
-  bottom: 150px;
-  right: 60px;
-  font-size: 25px;
-  border: 2px solid white;
-  width: 55px;
-  height: 55px;
-  display: flex;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
+/* navigation */
 
 .header-nav-container {
-  flex-basis: 70%;
+  flex-basis: 80%;
+  margin-left: 45px;
 }
 
 .header-nav-container-list {
   display: flex;
   color: white;
+  align-items: center;
   list-style-type: none;
 }
 
 .header-nav-container-item {
-  margin: 0 10px;
+  margin-right: 20px;
 }
 
 .header-menu-container {
   display: flex;
+  align-items: center;
 }
 
-.header-menu-item {
+.header-menu-container .header-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 20px;
   position: relative;
   margin-left: 30px;
   cursor: pointer;
 }
 
-
-.header-menu-search {
+.header-menu-container .header-menu-search {
   display: flex;
+  transition: all .2s linear;
   border: 1px solid transparent;
   padding: 3px 5px;
   align-items: center;
@@ -90,19 +75,117 @@ header img {
   cursor: pointer;
 }
 
-.search input {
-  transition: all .2s linear;
+.header-menu-search-container .header-menu-search-input {
   width: 0;
-  height: 27px;
-  transform-origin: 100% 100%;
-  font-size: 14px;
-  background-color: transparent;
-  caret-color: white;
   border: 0;
-  color: white;
+  background-color: transparent;
+  transition: all 0.5s linear;
+  font-size: 14px;
+  caret-color: #fff;
+  color: #fff;
+  height: 27px;
+}
+
+.active-container {
+  border: 1px solid grey;
+  padding: 5px 5px;
 }
 
 .active {
   width: 250px;
-  margin-left: 10px;
+  transform-origin: 100% 100%;
+}
+
+/* video handle */
+.main-video-container {
+  margin-top: -115px;
+  position: relative;
+  width: 100%;
+  height: 840px;
+  overflow: hidden;
+}
+
+.main-video-container * {
+  position: absolute;
+}
+
+.video-overlay {
+  background-image: linear-gradient(180deg,hsla(0,0%,8%,.3) 60%,#141414 95%);
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  height: 100%;
+}
+
+.main-video-container .volume {
+  z-index: 2;
+  bottom: 150px;
+  right: 60px;
+  font-size: 25px;
+  border: 2px solid #fff;
+  width: 55px;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#js-main-video {
+  top: 0;
+  width: 100%;
+  right: 0;
+}
+
+/* Movie List */
+
+.movie-list-container {
+  margin-top: -10px;
+  margin-bottom: 70px;
+  z-index: 4;
+  position: relative;
+}
+
+.movie-list-title {
+  font-size: 1.5vh;
+  text-transform: uppercase;
+  color: #e5e5e5;
+  margin-bottom: 20px;
+  padding: 0 60px;
+}
+
+.movie-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+  grid-gap: 5px;
+  /* padding: 0 60px; */
+}
+
+.movie-item img {
+  width: 100%;
+  height: 520px;
+}
+
+.movie-item-focus {
+  transition: all 0.2s linear;
+  transform: scale(1.2);
+  transform-origin: top;
+}
+
+.movie-item-move-right {
+  transition: all 0.2s linear;
+  transform: translateX(24px);
+}
+
+.movie-item-move-left {
+  transition: all 0.2s linear;
+  transform: translateX(-24px);
 }

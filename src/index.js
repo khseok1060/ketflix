@@ -2,7 +2,11 @@ import "./styles.css";
 
 const header = document.querySelector(".js-header"),
   video = document.getElementById("js-main-video"),
-  muteBtn = document.querySelector(".volume");
+  muteBtn = document.querySelector(".volume"),
+  searchBtn = document.querySelector(".fa-search"),
+  searchBar = document.querySelector(".header-menu-search"),
+  searchBarInput = document.querySelector(".header-menu-search-input"),
+  listMovieArr = document.querySelectorAll(".movie-item");
 
 video.autoplay = true;
 video.loop = true;
@@ -54,10 +58,36 @@ const handleMuteBtn = event => {
   }
 };
 
+
 const handleContentLoaded = () => {
   window.addEventListener("scroll", handleScroll);
   muteBtn.addEventListener("click", handleMuteBtn);
+  searchBtn.addEventListener("click", handleSearchBar);
   loadMutedPreference();
 };
+
+// movie list handle
+listMovieArr.forEach((movie, index) => {
+  movie.addEventListener("mouseover", function() {
+    movie.classList.add("movie-item-focus");
+    for (let i = 0; i < listMovieArr.length; i++) {
+      if (i < index) {
+        listMovieArr[i].classList.add("movie-item-move-left");
+      } else if (i > index) {
+        listMovieArr[i].classList.add("movie-item-move-right");
+      }
+    }
+  });
+  movie.addEventListener("mouseout", function() {
+    movie.classList.remove("movie-item-focus");
+    for (let i = 0; i < listMovieArr.length; i++) {
+      if (i < index) {
+        listMovieArr[i].classList.remove("movie-item-move-left");
+      } else if (i > index) {
+        listMovieArr[i].classList.remove("movie-item-move-right");
+      }
+    }
+  });
+});
 
 document.addEventListener("DOMContentLoaded", handleContentLoaded);
