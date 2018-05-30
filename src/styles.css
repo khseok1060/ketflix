@@ -1,7 +1,17 @@
 @import "reset.css";
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
 body {
-  height: 300vh;
+  height: 200vh;
   background-color: black;
 }
 
@@ -20,10 +30,16 @@ body {
 
 .header img {
   height: 60px;
+  margin-left: 30px;
 }
 
 .header-menu-item {
   color: white;
+}
+
+.header-icon-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .black {
@@ -48,34 +64,31 @@ body {
   margin-right: 20px;
 }
 
-.header-menu-container {
+.container {
   display: flex;
   align-items: center;
+  color: white;
+  margin-right: 30px;
 }
 
-.header-menu-container .header-menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.item {
+  color: #fff;
   font-size: 20px;
   position: relative;
   margin-left: 30px;
   cursor: pointer;
 }
 
-.header-menu-container .header-menu-search {
+.item-bar {
   display: flex;
-  transition: all .2s linear;
-  border: 1px solid transparent;
-  padding: 3px 5px;
   align-items: center;
 }
 
-.header-menu-search i {
-  cursor: pointer;
+.item-bar i {
+  margin-right: 10px;
 }
 
-.header-menu-search-container .header-menu-search-input {
+.item-bar-input input {
   width: 0;
   border: 0;
   background-color: transparent;
@@ -96,12 +109,26 @@ body {
   transform-origin: 100% 100%;
 }
 
+.header-notification-wrapper {
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background-color: #d32f27;
+}
+
 /* video handle */
 .main-video-container {
-  margin-top: -115px;
+  /* margin-top: 20px; */
   position: relative;
   width: 100%;
-  height: 840px;
+  height: 700px;
   overflow: hidden;
 }
 
@@ -146,18 +173,19 @@ body {
 /* Movie List */
 
 .movie-list-container {
-  margin-top: -10px;
+  padding-top: 30px;
   margin-bottom: 70px;
   z-index: 4;
   position: relative;
 }
 
 .movie-list-title {
-  font-size: 1.5vh;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.5vw;
   text-transform: uppercase;
   color: #e5e5e5;
   margin-bottom: 20px;
-  padding: 0 60px;
 }
 
 .movie-list {
@@ -165,7 +193,15 @@ body {
   width: 100%;
   grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
   grid-gap: 5px;
-  /* padding: 0 60px; */
+  padding: 0 60px;
+  margin: 0 auto;
+}
+
+.movie-item {
+  transition: transform .2s linear;
+  transform: none;
+  position: relative;
+  cursor: pointer;
 }
 
 .movie-item img {
@@ -187,4 +223,88 @@ body {
 .movie-item-move-left {
   transition: all 0.2s linear;
   transform: translateX(-24px);
+}
+
+.movie__slideshow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.movie__slideshow img {
+  opacity: 0;
+  transition: all 1s ease-in;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.slide {
+  opacity: 1;
+  display: inline;
+}
+
+.movie__overlay {
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 30% 20%;
+  background-image: linear-gradient(180deg, hsla(0, 0%, 8%, 0) 0, hsla(0, 0%, 8%, .8) 60%);
+  transition: opacity .3s linear;
+  opacity: 0;
+}
+
+.overlay__play-button {
+  font-size: 35px;
+  text-align: center;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.play-button__container {
+  background-color: rgba(0, 0, 0, .5);
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #fff;
+  color: #d32f27;
+  padding-left: 10px;
+}
+
+.movie-info {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 0 5px;
+}
+
+.info__title {
+  font-size: 20px;
+}
+
+.info__year {
+  margin: 10px 0;
+}
+
+.info__intro {
+  font-size: 14px;
+}
+
+.movie__arrow {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 30px;
+  /* transform: scaleX(2.5) translateY(-10px);
+  transition: transform .3s linear, color .3s linear; */
 }

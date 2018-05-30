@@ -25,6 +25,10 @@ const commonConfig = {
         }
       },
       {
+        test: /\.mp4$/,
+        loader: "file-loader"
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude: /(node_modules)/,
         use: [

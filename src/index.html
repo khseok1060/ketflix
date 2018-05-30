@@ -12,7 +12,7 @@
 <body>
 	<header class="header js-header">
     <div class="header-logo-container">
-      <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c529.png" height="60px" />
+      <img src="<%= require('./media/logo.png') %>" />
     </div>
 		<nav class="header-nav-container">
 			<ul class="header-nav-container-list">
@@ -24,13 +24,37 @@
 				<li class="header-nav-container-item">My List</li>
 			</ul>
     </nav>
+    <div class="container">
+      <div class="item">
+        <div class="item-bar">
+          <i class="fas fa-search testBtn"></i>
+          <div class="item-bar-input">
+            <input type="text" class="inputTest" placeholder="Name, Genre" />
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="header-icon-wrapper">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="header-notification-wrapper">
+          <span class="header-notification-wrapper-number">4</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="header-icon-wrapper">
+          <i class="fas fa-user-circle"></i>
+          <i class="fas fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
 	</header>
 	<div class="main-video-container">
     <div class="video-overlay"></div>
     <div class="volume">
       <i class="fas fa-volume-up"></i>
     </div>
-		<video id="js-main-video" src="https://serranoarevalo.github.io/nomflix/9bfd1023900e31286103369c803c7ee9.ogv"></video>
+    <video id="js-main-video" src=<%= require('./media/movieTrailer.mp4') %> type="video/mp4"></video>
   </div>
   <section class="movie-list-container">
 		<div class="movie-list-title">
@@ -38,24 +62,126 @@
 		</div>
 		<div class="movie-list">
 			<div class="movie-item">
-				<img src="https://serranoarevalo.github.io/nomflix/efb15fab482b2d03c9356daff7339949.png" alt="" />
+        <div class="movie__overlay">
+          <div class="overlay__play-button">
+            <div class="play-button__container">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="info__title">Thanos is conquerer</h3>
+            <h4 class="info__year">2018</h4>
+            <p class="info__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaret.
+            </p>
+          </div>
+          <div class="movie__arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </div> <!-- movie overlay end-->
+        <img src="<%= require('./media/happy.png') %>" />
       </div>
       <div class="movie-item">
-				<img src="https://serranoarevalo.github.io/nomflix/efb15fab482b2d03c9356daff7339949.png" alt="" />
+        <div class="movie__overlay">
+          <div class="overlay__play-button">
+            <div class="play-button__container">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="info__title">Thanos is conquerer</h3>
+            <h4 class="info__year">2018</h4>
+            <p class="info__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaret.
+            </p>
+          </div>
+          <div class="movie__arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </div> <!-- movie overlay end-->
+        <img src=<%= require('./media/lostinspace.png') %> />
       </div>
       <div class="movie-item">
-        <img src="https://serranoarevalo.github.io/nomflix/efb15fab482b2d03c9356daff7339949.png" alt="" />
+        <div class="movie__overlay">
+          <div class="overlay__play-button">
+            <div class="play-button__container">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="info__title">Thanos is conquerer</h3>
+            <h4 class="info__year">2018</h4>
+            <p class="info__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaret.
+            </p>
+          </div>
+          <div class="movie__arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </div> <!-- movie overlay end-->
+        <img src=<%= require('./media/kevinjames.png') %> />
       </div>
       <div class="movie-item">
-        <img src="https://serranoarevalo.github.io/nomflix/efb15fab482b2d03c9356daff7339949.png" alt="" />
+        <div class="movie__overlay">
+          <div class="overlay__play-button">
+            <div class="play-button__container">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="info__title">Thanos is conquerer</h3>
+            <h4 class="info__year">2018</h4>
+            <p class="info__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaret.
+            </p>
+          </div>
+          <div class="movie__arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </div> <!-- movie overlay end-->
+        <img src=<%= require('./media/thealienist.png') %> />
       </div>
       <div class="movie-item">
-        <img src="https://serranoarevalo.github.io/nomflix/efb15fab482b2d03c9356daff7339949.png" alt="" />
+        <div class="movie__overlay">
+          <div class="overlay__play-button">
+            <div class="play-button__container">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="info__title">Thanos is conquerer</h3>
+            <h4 class="info__year">2018</h4>
+            <p class="info__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaret.
+            </p>
+          </div>
+          <div class="movie__arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </div> <!-- movie overlay end-->
+        <img src=<%= require('./media/theweekof.png') %> />
       </div>
       <div class="movie-item">
-        <img src="https://serranoarevalo.github.io/nomflix/efb15fab482b2d03c9356daff7339949.png" alt="" />
+        <div class="movie__overlay">
+          <div class="overlay__play-button">
+            <div class="play-button__container">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="movie-info">
+            <h3 class="info__title">Thanos is conquerer</h3>
+            <h4 class="info__year">2018</h4>
+            <p class="info__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore enim impedit non quaret.
+            </p>
+          </div>
+          <div class="movie__arrow">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </div> <!-- movie overlay end-->
+        <img src=<%= require('./media/extraodrinary.png') %> />
       </div>
-		</div>
+    </div>
 	</section>
 </body>
 
