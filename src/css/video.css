@@ -1,0 +1,45 @@
+.main-video-container {
+  /* margin-top: 20px; */
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.main-video-container * {
+  position: absolute;
+}
+
+.video-overlay {
+  background-image: linear-gradient(180deg, hsla(0, 0%, 8%, .3) 60%, #141414 95%);
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  height: 100%;
+}
+
+.main-video-container .volume {
+  z-index: 2;
+  bottom: 150px;
+  right: 60px;
+  font-size: 25px;
+  border: 2px solid #fff;
+  width: 55px;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+}
+
+#js-main-video {
+  top: 0;
+  width: 100%;
+  right: 0;
+}

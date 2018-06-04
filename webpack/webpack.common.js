@@ -8,7 +8,7 @@ const prodConfig = require("./webpack.prod");
 const MODE = process.env.npm_lifecycle_event;
 
 const PATHS = {
-  app: path.join(__dirname, "../src/index.js"),
+  app: path.join(__dirname, "../src/js/index.js"),
   output: path.join(__dirname, "../dist"),
   template: path.join(__dirname, "../src/index.html")
 };

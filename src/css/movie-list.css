@@ -1,0 +1,146 @@
+.movie-list-container {
+  padding-top: 30px;
+  margin-bottom: 70px;
+  z-index: 4;
+  position: relative;
+}
+
+.movie-list-title {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  color: #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.movie-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+  grid-gap: 5px;
+  padding: 0 60px;
+  margin: 0 auto;
+}
+
+.movie-item {
+  transition: transform .2s linear;
+  transform: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.movie-item:hover 
+.movie__overlay
+{
+  opacity: 1;
+}
+
+.movie-item img {
+  width: 100%;
+  height: 520px;
+}
+
+.movie-item-focus {
+  transition: all 0.2s linear;
+  transform: scale(1.2);
+  transform-origin: top;
+}
+
+.movie-item-move-right {
+  transition: all 0.2s linear;
+  transform: translateX(24px);
+}
+
+.movie-item-move-left {
+  transition: all 0.2s linear;
+  transform: translateX(-24px);
+}
+
+.movie__overlay {
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 30% 20%;
+  background-image: linear-gradient(180deg, hsla(0, 0%, 8%, 0) 0, hsla(0, 0%, 8%, .8) 60%);
+  transition: opacity .3s linear;
+  opacity: 0;
+}
+
+.overlay__play-button {
+  font-size: 35px;
+  text-align: center;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.play-button__container {
+  background-color: rgba(0, 0, 0, .5);
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #fff;
+  color: #d32f27;
+  padding-left: 10px;
+}
+
+.movie-info {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 0 5px;
+}
+
+.info__title {
+  font-size: 20px;
+}
+
+.info__year {
+  margin: 10px 0;
+}
+
+.info__intro {
+  font-size: 14px;
+}
+
+.movie__arrow {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 30px;
+}
+
+/* slide */
+.movie-item:hover
+.movie-slide img
+{
+  display: inline;
+}
+
+.movie-slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all .3s ease-in;
+}
+
+.movie-slide img {
+  display: none;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: all .3s ease-in;
+}
+
+.slide-show {
+  opacity: 1 !important;
+}
