@@ -63,3 +63,5 @@ output
 bundle
 dist
 out
+
+.DS_Store
