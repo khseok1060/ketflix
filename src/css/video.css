@@ -42,4 +42,5 @@
   top: 0;
   width: 100%;
   right: 0;
+  object-fit: cover;
 }

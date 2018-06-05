@@ -64,6 +64,7 @@ export default function mainVideoControl() {
 
   video.autoplay = true;
   video.loop = true;
+  video.poster = require('../media/image/poster.jpg');
 
   loadMutedPreference(video, muteBtn);
   mainVideoPlayScrollControl(video);
