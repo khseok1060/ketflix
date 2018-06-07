@@ -3,14 +3,24 @@
 // 2. mute 버튼 처리
 
 const mainVideoPlayScrollControl = (video) => {
-  const scrollPlay = () => {
+  const scrollPlay = () => { 
     const scrollHeight = Math.floor(window.scrollY);
+    let playPromise = video.play();
 
-    if (scrollHeight > 300) {
-      video.pause();
-    } else {
-      video.play();
+    if (playPromise !== undefined) {
+      playPromise.then(_ => {
+        if (scrollHeight > 300) {
+          video.pause();
+        } else {
+          video.play();
+        }
+      })
+      .catch(error => {
+        throw new error(error);
+      });
     }
+
+    
   };
 
   window.addEventListener("scroll", scrollPlay);
